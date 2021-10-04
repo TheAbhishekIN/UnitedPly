@@ -8,6 +8,11 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
+    options: {
+      safelist: [
+        'sm:max-w-2xl'
+      ]
+    }
 
     theme: {
         extend: {

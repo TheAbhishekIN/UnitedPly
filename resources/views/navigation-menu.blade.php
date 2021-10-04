@@ -27,12 +27,16 @@
                         <x-jet-nav-link href="{{ route('admin.invoice') }}" :active="request()->routeIs('admin.invoice')">
                             {{ __('Invoice') }}
                         </x-jet-nav-link>
+                         <x-jet-nav-link href="{{ route('admin.price_lists')}}" :active="request()->routeIs('admin.price_lists')">
+                            {{__('Price List')}}
+                        </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('admin.brands') }}" :active="request()->routeIs('admin.brands')">
                             {{ __('Brands') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('admin.price_lists')}}" :active="request()->routeIs('admin.price_lists')">
-                            {{__('Price List')}}
+                          <x-jet-nav-link href="{{ route('admin.station') }}" :active="request()->routeIs('admin.station')">
+                            {{ __('Station') }}
                         </x-jet-nav-link>
+                       
                     @endif
                     @if(Auth::user()->role == 'dealer')
                         <x-jet-nav-link href="{{ route('dealer.dashboard') }}" :active="request()->routeIs('dealer.dashboard')">
@@ -169,12 +173,16 @@
                 <x-jet-responsive-nav-link href="{{ route('admin.invoice') }}" :active="request()->routeIs('admin.invoice')">
                     {{ __('Invoice') }}
                 </x-jet-responsive-nav-link>
+                 <x-jet-responsive-nav-link href="{{ route('admin.price_lists') }}" :active="request()->routeIs('admin.price_lists')">
+                    {{ __('Price Lists') }}
+                </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('admin.brands') }}" :active="request()->routeIs('admin.brands')">
                     {{ __('Brands') }}
                 </x-jet-responsive-nav-link>
-                <x-jet-responsive-nav-link href="{{ route('admin.price_lists') }}" :active="request()->routeIs('admin.price_lists')">
-                    {{ __('Price Lists') }}
+                 <x-jet-responsive-nav-link href="{{ route('admin.station') }}" :active="request()->routeIs('admin.station')">
+                    {{ __('Station') }}
                 </x-jet-responsive-nav-link>
+               
             @endif
             @if(Auth::user()->role == 'dealer')
                 <x-jet-responsive-nav-link href="{{ route('dealer.dashboard') }}" :active="request()->routeIs('dealer.dashboard')">

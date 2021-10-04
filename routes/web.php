@@ -49,6 +49,10 @@ Route::middleware(['auth:sanctum', 'verified','isAdmin'])->prefix('admin')->grou
     Route::get('/create-brand', [BrandController::class, 'create'])->name('admin.create_brand');
     Route::post('/save-brand', [BrandController::class, 'save'])->name('admin.store_brand');
 
+    Route::get('/station', [BrandController::class, 'station'])->name('admin.station');
+    Route::get('/create-station', [BrandController::class, 'create_station'])->name('admin.create_station');
+    Route::post('/save-station', [BrandController::class, 'store_station'])->name('admin.store_station');
+
     Route::get('/price-list', [PriceListController::class, 'index'])->name('admin.price_lists');
     Route::get('/create-price-list', [PriceListController::class, 'create'])->name('admin.create_price_list');
     Route::post('/save-price-list', [PriceListController::class, 'store'])->name('admin.store_price_list');

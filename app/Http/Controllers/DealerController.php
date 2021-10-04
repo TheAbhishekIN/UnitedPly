@@ -28,7 +28,17 @@ class DealerController extends Controller
 
     public function create(){
         $brands = Brand::all();
-     
+        $belts = DB::table('belts')->get();
+        $stations = array();
+        foreach ($belts as $b => $belt) {
+            $station = DB::table('stations')->where('belt_id',$belt->id)->get();
+
+            $stations[$b]['belt_name'] =  $belt->belt_name;
+            $stations[$b]['stations'] =  $station;
+
+        }
+
+        // dd($stations);
         return view('dealer.create',compact('brands'));
     }
 
@@ -37,6 +47,7 @@ class DealerController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required','numeric', 'unique:users'],
+            'station' => ['required'],
 
         ]);
 

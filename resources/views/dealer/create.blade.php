@@ -33,6 +33,28 @@
                         <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="off"/>
                     </div>
                     <div class="mt-4">
+                        <x-jet-label for="station" value="{{ __('Station') }}" />
+                       <select name="station" id="station" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full">
+                            <optgroup label="Barmer Belt">
+                               <option value="phalodi">Phalodi</option>
+                               <option value="Barmer">Barmer</option>
+                               <option value="Sanchore">Sanchore</option>
+                               <option value="Raniwara">Raniwara</option>
+                               <option value="Jalore">Jalore</option>
+                               <option value="Ahore">Ahore</option>
+                               <option value="Sayla">Sayla</option>
+                               <option value="Siwana">Siwana</option>
+                               <option value="Bhinmal">Bhinmal</option>
+                               <option value="Jaisalmer">Jaisalmer</option>
+                               <option value="Dhori Manna">Dhori Manna</option>
+                               <option value="Bagra">Bagra</option>
+                               <option value="Balotra">Balotra</option>
+                            </optgroup>
+                          
+                        </select>
+
+                    </div>
+                    <div class="mt-4">
                         <x-jet-label for="email" value="{{ __('Dealer Brands') }}" />
                         <select name="dealer_brands[]" id="dealer_brands" class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm block mt-1 w-full" multiple="multiple">
                             @foreach($brands as $brand)
